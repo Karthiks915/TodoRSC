@@ -68,8 +68,7 @@ class MyHomePage extends HookConsumerWidget {
           Expanded(
             child: todos.when(
                 data: (todos) {
-                  
-                  return ListView(
+                 return ListView(
                     children: [
                       for (final todo in todos)
                         ListTile(

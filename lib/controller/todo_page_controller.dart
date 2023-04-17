@@ -6,7 +6,7 @@ class TodoController {
 
   TodoController(this._isarRepository);
 
-  Stream<List<Todo>> getAllTodos() async* {
+  Stream<List> getAllTodos() async* {
     yield* _isarRepository.getAllTodos();
   }
 

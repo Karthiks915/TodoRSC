@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:todo_app/controller/todo_page_controller.dart';
@@ -9,18 +10,22 @@ class AddTodoPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    String? dropdownValue = 'purple';
+    String dropdownValue = 'purple';
+    final player = AudioPlayer();
     TodoController todoController = ref.watch(todoControllerProvider);
     TextEditingController titleController = TextEditingController();
-    TextEditingController categoryController = TextEditingController();
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Colors.white,
         onPressed: () {
-          todoController.addTodo(
-            Todo(title: titleController.text, color: dropdownValue!),
-          );
-          titleController.clear();
+          String? text = titleController.text;
+
+          if (text.isNotEmpty) {
+            todoController.addTodo(
+              Todo(title: titleController.text, color: dropdownValue),
+            );
+            titleController.clear();
+          }
 
           Navigator.pop(context);
         },
@@ -63,26 +68,21 @@ class AddTodoPage extends HookConsumerWidget {
                 SizedBox(
                   height: 10,
                 ),
-                DropdownButton<String>(
-                    alignment: Alignment.centerLeft,
-                    value: dropdownValue,
-                    iconSize: 24,
-                    elevation: 16,
-                    style: TextStyle(color: Colors.grey[700]),
-                    underline: Container(
-                      height: 4,
-                      color: Colors.white,
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () async {
+                        if (ref.watch(countProvider) == 0) {
+                          player.play(AssetSource('LucyAI1.mp3'));
+                          ref.watch(countProvider.notifier).state = 1;
+                        } else {
+                          print('Hello');
+                        }
+                      },
+                      child: Text('Lucy'),
                     ),
-                    onChanged: (String? newValue) {
-                      dropdownValue = newValue;   
-                    },
-                    items: <String>['purple', 'red', 'green', 'yellow', 'blue']
-                        .map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList()),
+                  ],
+                ),
               ],
             ),
           ],

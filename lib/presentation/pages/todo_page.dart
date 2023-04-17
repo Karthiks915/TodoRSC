@@ -10,6 +10,7 @@ class TodoPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final todos = ref.watch(todosProvider);
+    final todosController = ref.watch(todoControllerProvider);
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
@@ -65,9 +66,8 @@ class TodoPage extends HookConsumerWidget {
                               padding:
                                   const EdgeInsets.symmetric(vertical: 8.0),
                               child: Dismissible(
-                                onDismissed: (direction) => ref
-                                    .watch(todoControllerProvider)
-                                    .deleteTodo(todo.id),
+                                onDismissed: (direction) =>
+                                    todosController.deleteTodo(todo.id),
                                 key: ValueKey(todo.id),
                                 child: Container(
                                   decoration: BoxDecoration(
@@ -77,9 +77,7 @@ class TodoPage extends HookConsumerWidget {
                                   child: CheckboxListTile(
                                     value: todo.isCompleted,
                                     onChanged: (bool? value) {
-                                      ref
-                                          .watch(todoControllerProvider)
-                                          .updateTodo(todo);
+                                      todosController.updateTodo(todo);
                                     },
                                     title: Text(todo.title),
                                   ),

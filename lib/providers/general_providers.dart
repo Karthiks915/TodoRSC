@@ -15,4 +15,6 @@ TodoController todoController(TodoControllerRef ref) {
   return TodoController(IsarTodoRepository());
 }
 
-
+final countProvider = StateProvider<int>((ref) {
+  return 0;
+});
