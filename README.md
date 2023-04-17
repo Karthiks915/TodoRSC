@@ -4,9 +4,10 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Simple Todo app to practice implementation of Repository Service Controller pattern.
 
-A simple todo app that uses the following -
+
+The app uses the following -
 1) Riverpod for state management. (Uses Riverpod generation)
 2) Isar for local database. 
 3) Freezed is code generation for data classes
