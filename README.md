@@ -6,11 +6,12 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+A simple todo app that uses the following -
+1) Riverpod for state management. (Uses Riverpod generation)
+2) Isar for local database. 
+3) Freezed is code generation for data classes
+4) Repository-Service-Controller Pattern.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Future plans-
+1) Firebase/Appwrite repository that lets you switch between local and remote database.
+2) ChatGPT API that lets you add multiple todos without the need for typing everything manually. 

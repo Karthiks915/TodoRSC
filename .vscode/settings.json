@@ -23,8 +23,7 @@
         ".flutter-plugins-dependencies": true,
         ".metadata": true,
         "custom_lint.log": true,
-        "pubspec.lock": true,
-        "README.md": true
+        "pubspec.lock": true
     },
     "hide-files.files": [
         "android",
@@ -42,7 +41,6 @@
         ".flutter-plugins-dependencies",
         ".metadata",
         "custom_lint.log",
-        "pubspec.lock",
-        "README.md"
+        "pubspec.lock"
     ]
 }
