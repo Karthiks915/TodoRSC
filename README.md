@@ -1,6 +1,5 @@
-A new Flutter project.
 
-Getting Started
+
 Simple Todo app to practice implementation of Repository Service Controller pattern.
 
 The app uses the following -
