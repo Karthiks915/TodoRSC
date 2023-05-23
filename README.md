@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-Simple Todo app to practice implementation of Repository Service Controller pattern.
+Simple Todo app to show the implementation of Repository Service Controller pattern.
 
 
 The app uses the following -
@@ -13,6 +13,3 @@ The app uses the following -
 3) Freezed is code generation for data classes
 4) Repository-Service-Controller Pattern.
 
-Future plans-
-1) Firebase/Appwrite repository that lets you switch between local and remote database.
-2) ChatGPT API that lets you add multiple todos without the need for typing everything manually. 
